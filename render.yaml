@@ -1,28 +1,11 @@
 services:
   - type: web
-    name: email-sender-api
-    runtime: python
+    name: notify-api
+    runtime: docker
     plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    dockerfilePath: ./Dockerfile
     healthCheckPath: /health
     autoDeploy: true
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
       - key: API_KEY
         generateValue: true
-      - key: RESEND_API_KEY
-        sync: false
-      - key: MAILGUN_API_KEY
-        sync: false
-      - key: MAILGUN_DOMAIN
-        sync: false
-      - key: SENDGRID_API_KEY
-        sync: false
-      - key: POSTMARK_API_KEY
-        sync: false
-      - key: SMTP_EMAIL
-        sync: false
-      - key: SMTP_PASSWORD
-        sync: false

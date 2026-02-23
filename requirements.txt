@@ -1,17 +1,4 @@
-# FastAPI and server
-fastapi>=0.104.0
-uvicorn[standard]>=0.24.0
-
-# Pydantic and settings
-pydantic>=2.5.0
-pydantic-settings>=2.1.0
-email-validator>=2.1.0
-
-# HTTP client for Resend API
-httpx>=0.25.0
-
-# CORS support (included in FastAPI but explicit for clarity)
-python-multipart>=0.0.6
-
-# Production server (optional but recommended)
+flask>=2.3.0
+flask-cors>=4.0.0
+requests>=2.31.0
 gunicorn>=21.2.0
